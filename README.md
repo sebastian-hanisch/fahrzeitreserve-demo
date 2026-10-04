@@ -1,5 +1,7 @@
 # Fahrzeitreserve: Wo setzt man den Puffer? (Streamlit-Demo)
 
+**[→ Demo live ausprobieren](https://sebastianhanisch-fahrzeitreserve-demo.streamlit.app/)**
+
 Interaktive **Fall-Demo** zur Verteilung von Fahrzeitreserven im Portfolio von [Sebastian Hanisch](https://sebastianhanisch.net) (Operations Research und Machine Learning).
 **Fünfter Baustein der Reihe Bahn/Schienenverkehr** nach dem [Taktfahrplan](https://github.com/sebastian-hanisch/taktfahrplan-demo) und dem [Trassenkonflikt](https://github.com/sebastian-hanisch/trassenkonflikt-demo),
 in denen Fahrzeitreserven bewusst offen blieben.

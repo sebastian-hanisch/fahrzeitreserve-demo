@@ -14,7 +14,7 @@ verteilt werden; jede Reserve nimmt Verspätung auf, die sich sonst entlang der 
 
 Wo gehört die Reserve hin, wenn man nur ein festes Budget verteilen darf? Verwandt, aber eine andere Frage: [bullwhip-demo](https://github.com/sebastian-hanisch/bullwhip-demo) zeigt, dass sich Schwankung entlang einer
 Kette verstärkt; [robuste-kaiplatz-demo](https://github.com/sebastian-hanisch/robuste-kaiplatz-demo) stellt einen Gesamtpuffer gegen Neuplanung. Hier ist die Entscheidung die **Allokation** eines Budgets entlang einer Kette,
-gemessen gegen die Praxisregel. Das Ergebnis ist qualitativ kein Neuland der Forschung (aus der Fließband-Literatur ist die „storage bowl"-Aussage bekannt, dass Puffer in der Mitte statt gleichmäßig stehen sollen;
+gemessen gegen die Praxisregel. Das Ergebnis ist qualitativ kein Neuland der Forschung (aus der Fließband-Literatur ist die „storage bowl“-Aussage bekannt, dass Puffer in der Mitte statt gleichmäßig stehen sollen;
 Literatur dazu und zu Fahrzeitzuschlägen: Kroon u. a., Transportation Research Part B 42(6), 2008; Goverde, Transportation Research Part B 41(2), 2007), aber im Portfolio neu.
 
 ## Befunde und Korrekturen gegenüber dem Plan
@@ -50,7 +50,7 @@ Literatur dazu und zu Fahrzeitzuschlägen: Kroon u. a., Transportation Research 
 ## Befunde (gemessen, keine Behauptungen)
 
 Alle Zahlen stehen in `tests/test_claims.py`. 40 Strecken je Variante (Seeds 100–139), Mittel ± Standardfehler über die Strecken, bewertet an frischen Tagen; **Verspätung über dem Optimum** (Basis = Optimum) bzw.
-„Optimum senkt um" (Basis = Praxisregel).
+„Optimum senkt um“ (Basis = Praxisregel).
 
 | Frage | Befund |
 |---|---|

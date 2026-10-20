@@ -44,6 +44,17 @@ verteilt werden; jede Reserve nimmt Verspätung auf, die sich sonst entlang der 
 **Wie sehr hängt die Antwort davon ab, wo Verspätung gezählt wird und wie viele Tage man beobachtet hat?**
 """
 )
+
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/fahrzeitreserve-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Auf einer Strecke fahren mehrere Züge hintereinander und werden zufällig gestört. Im Fahrplan steckt eine **Fahrzeitreserve**: Zeit, mit der ein Zug eine Verspätung wieder aufholen kann. Das Budget dafür ist begrenzt, also muss man entscheiden, in welchem Abschnitt wie viel davon steht. Die Praxisregel verteilt es im Verhältnis zur Fahrzeit. Die Demo vergleicht sie mit einer Verteilung nach Störungsrisiko und mit dem Optimum, das aus beobachteten Tagen die beste Verteilung berechnet und an neuen Tagen geprüft wird. Das Ergebnis hängt davon ab, wo man Verspätung zählt: an jedem Halt, nur am Ziel oder nach Fahrgastlast. Es ist ein stark vereinfachtes Modell mit erfundenen Strecken.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/fahrzeitreserve-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
 st.caption(
     "Fünfter Baustein der Reihe Bahn/Schienenverkehr nach [Taktfahrplan](https://sebastianhanisch-taktfahrplan-demo.streamlit.app/) und "
     "[Trassenkonflikt](https://sebastianhanisch-streckenkonflikt-demo.streamlit.app/), in denen Fahrzeitreserven bewusst offen blieben. Die Verspätungsfortpflanzung entlang einer Kette kennt man aus "
@@ -233,6 +244,29 @@ Fahrplanempfehlung.
     )
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/fahrzeitreserve-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind die Strecke mit zwölf Abschnitten, die zufälligen Störungen, das Budget an Reserve und der Zugfolge-Spielraum. Gesucht ist die Reserve je Abschnitt, bei der die gewichtete mittlere Verspätung am kleinsten wird.
+
+| Symbol | Bedeutung |
+|---|---|
+| $j$, $k$ | Zug, Abschnitt |
+| $A_{jk}$ | Verspätung von Zug $j$ am Ende von Abschnitt $k$ |
+| $e_{jk}$ | Störung (zufällig) |
+| $a_k$ | Reserve im Abschnitt $k$ (für alle Züge gleich) |
+| $g_k$ | Zugfolge-Spielraum (an den Engpässen 0) |
+| $S$, $s$ | Zahl der Planungstage, ein Planungstag |
+| $M$ | Zahl der Züge |
+| $w_k$ | Gewicht der Wertung (wo Verspätung zählt) |
+| $B$ | Budget an Reserve (Summe aller $a_k$) |
+| $\ell_k$ | Mindestreserve im Abschnitt $k$ |
+| $r_k$, $p_k \mu_k$ | Fahrzeit; Störungswahrscheinlichkeit mal mittlere Höhe |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/fahrzeitreserve-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(
         r"""
 **Fortpflanzung.** Zug $j$, Abschnitt $k$: $A_{jk} = \max\left(0,\; A_{j,k-1} + e_{jk} - a_k,\; A_{j-1,k} - g_k\right)$ mit der Störung $e_{jk}$, der Reserve $a_k$ und dem Zugfolge-Spielraum $g_k$ (an den Engpässen 0).
